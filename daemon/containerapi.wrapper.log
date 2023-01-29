@@ -1,0 +1,159 @@
+2022-09-29 11:17:47 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-09-29 11:17:48 - Started 3136
+2022-09-29 12:15:28 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-09-29 12:15:28 - Started 3932
+2022-09-30 03:14:39 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-09-30 03:14:39 - Started 4188
+2022-10-07 12:33:32 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-10-07 12:33:32 - Started 3988
+2022-10-09 11:36:57 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-10-09 11:36:57 - Started 3860
+2022-10-09 13:36:02 - Stopping containerapi.exe
+2022-10-09 13:36:02 - ProcessKill 3860
+2022-10-09 13:36:02 - Shutdown exception
+Message:A system shutdown is in progress. (Exception from HRESULT: 0x8007045B)
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2022-10-09 13:36:20 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-10-09 13:36:20 - Started 4032
+2022-10-13 04:17:25 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-10-13 04:17:25 - Started 4116
+2022-10-21 17:03:32 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-10-21 17:03:32 - Started 4560
+2022-10-21 17:14:24 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-10-21 17:14:24 - Started 9136
+2022-11-05 07:04:16 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-11-05 07:04:16 - Started 4108
+2022-11-05 13:01:06 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-11-05 13:01:06 - Started 4236
+2022-11-06 04:54:27 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-11-06 04:54:27 - Started 4116
+2022-11-06 05:04:51 - Stopping containerapi.exe
+2022-11-06 05:04:51 - ProcessKill 4116
+2022-11-06 05:04:51 - Shutdown exception
+Message:A system shutdown is in progress. (Exception from HRESULT: 0x8007045B)
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2022-11-06 05:05:09 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-11-06 05:05:09 - Started 2988
+2022-11-07 13:35:56 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-11-07 13:35:56 - Started 3584
+2022-11-09 04:14:55 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-11-09 04:14:55 - Started 4108
+2022-11-23 12:12:35 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-11-23 12:12:35 - Started 4156
+2022-11-23 13:41:49 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-11-23 13:41:49 - Started 4176
+2022-11-23 14:08:34 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-11-23 14:08:34 - Started 3860
+2022-11-24 10:52:14 - Stopping containerapi.exe
+2022-11-24 10:52:14 - ProcessKill 3860
+2022-11-24 10:52:15 - Shutdown exception
+Message:A system shutdown is in progress. (Exception from HRESULT: 0x8007045B)
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2022-11-24 10:52:35 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-11-24 10:52:35 - Started 4140
+2022-11-24 11:06:06 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-11-24 11:06:06 - Started 4384
+2022-12-01 13:49:06 - Stopping containerapi.exe
+2022-12-01 13:49:06 - ProcessKill 4384
+2022-12-01 13:49:07 - Shutdown exception
+Message:A system shutdown is in progress. (Exception from HRESULT: 0x8007045B)
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2022-12-01 13:49:26 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-12-01 13:49:27 - Started 4120
+2022-12-02 07:41:30 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-12-02 07:41:30 - Started 4160
+2022-12-15 04:20:09 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-12-15 04:20:13 - Started 4176
+2023-01-05 11:52:47 - Stopping containerapi.exe
+2023-01-05 11:52:47 - ProcessKill 4176
+2023-01-05 11:52:48 - Found child process: 4184 Name: conhost.exe
+2023-01-05 11:52:48 - Found child process: 4520 Name: node.exe
+2023-01-05 11:52:48 - Stopping process 4184
+2023-01-05 11:52:48 - Send SIGINT 4184
+2023-01-05 11:52:48 - SIGINT to 4184 failed - Killing as fallback
+2023-01-05 11:52:48 - Stopping process 4520
+2023-01-05 11:52:48 - Send SIGINT 4520
+2023-01-05 11:52:48 - SIGINT to 4520 failed - Killing as fallback
+2023-01-05 11:52:48 - Stopping process 4176
+2023-01-05 11:52:48 - Send SIGINT 4176
+2023-01-05 11:52:48 - SIGINT to 4176 failed - Killing as fallback
+2023-01-05 11:52:48 - Finished containerapi.exe
+2023-01-05 11:52:52 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-01-05 11:52:52 - Started 2480536
+2023-01-12 04:14:26 - Stopping containerapi.exe
+2023-01-12 04:14:26 - ProcessKill 2480536
+2023-01-12 04:14:26 - Shutdown exception
+Message:A system shutdown is in progress. (Exception from HRESULT: 0x8007045B)
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2023-01-12 04:15:37 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-01-12 04:15:37 - Started 4112
+2023-01-26 17:25:13 - Stopping containerapi.exe
+2023-01-26 17:25:13 - ProcessKill 4112
+2023-01-26 17:25:13 - Shutdown exception
+Message:A system shutdown is in progress. (Exception from HRESULT: 0x8007045B)
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2023-01-26 17:28:14 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-01-26 17:28:14 - Started 4116
+2023-01-28 23:50:32 - Stopping containerapi.exe
+2023-01-28 23:50:32 - ProcessKill 4116
+2023-01-28 23:50:32 - Shutdown exception
+Message:A system shutdown is in progress. (Exception from HRESULT: 0x8007045B)
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2023-01-28 23:50:49 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AAcharya\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\MobileApp\backend\index.js --log "ContainerAPI wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-01-28 23:50:49 - Started 4160
