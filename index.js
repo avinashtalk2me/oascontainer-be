@@ -6,6 +6,9 @@ const palletRoutes = require("./app/routes/pallet.route");
 const packageRoutes = require("./app/routes/package.route");
 const pkgTypeRoutes = require("./app/routes/pkgType.route");
 const userRoutes = require("./app/routes/user.route");
+const deliveryRoutes = require("./app/routes/delivery.route");
+const locationRoutes = require("./app/routes/location.route");
+const dropOffRoutes = require("./app/routes/dropoff.route");
 const appUtilsRoutes = require("./app/routes/appUtils.route");
 const auth = require("./app/middleware/auth");
 const { getImageUrl } = require("./app/utils/getDocs");
@@ -53,13 +56,32 @@ router.route("/package/getHWBInfo/:hwbNo/:palletId").get(packageRoutes.getSelect
 router.route("/package/getPkgNo/:palletId").post(packageRoutes.getSelectedPackagePkgNos);
 router.route("/package/:palletId").get(packageRoutes.getPackages);
 router.route("/package/:palletId").post(packageRoutes.insertPackage);
-router.route("/package/:palletId/:packageId").get(packageRoutes.getPackageById);
+// router.route("/package/:palletId/:packageId").get(packageRoutes.getPackageById);
 router.route("/package/:packageId").patch(packageRoutes.updatePackage);
 router.route("/package/:packageId").delete(packageRoutes.deletePackage);
 
 router.route("/package/pkgType").get(pkgTypeRoutes.getPkgTypes);
 router.route("/package/pkgType").post(pkgTypeRoutes.insertPkgTypes);
 
+router.route("/delivery").get(deliveryRoutes.getDeliveries);
+router.route("/delivery").post(deliveryRoutes.insertDelivery);
+router.route("/delivery/:deliveryId").get(deliveryRoutes.getDeliveryById);
+router.route("/delivery/:deliveryId").patch(deliveryRoutes.updateDelivery);
+router.route("/delivery/:deliveryId").delete(deliveryRoutes.deleteDelivery);
+
+router.route("/location/:deliveryId").get(locationRoutes.getLocations);
+router.route("/location/:deliveryId").post(locationRoutes.insertLocation);
+router.route("/location/:deliveryId/:locationId").get(locationRoutes.getLocationById);
+router.route("/location/:locationId").patch(locationRoutes.updateLocation);
+router.route("/location/:locationId").delete(locationRoutes.deleteLocation);
+
+
+router.route("/dropOff/getSelectedHWBInfoForDropOff/:locationId/:hwbNo").get(dropOffRoutes.getSelectedHwbInfoForDropOff);
+// router.route("/dropOff/getPkgNo/:palletId").post(packageRoutes.getSelectedPackagePkgNos);
+router.route("/dropOff/:locationId").get(dropOffRoutes.getDropOffs);
+router.route("/dropOff/:locationId/:deliveryId").post(dropOffRoutes.insertDropOff);
+router.route("/dropOff/:packageId").patch(dropOffRoutes.updateDropOff);
+router.route("/dropOff/:packageId").delete(dropOffRoutes.deleteDropOff);
 
 
 app.use(erroHandler);

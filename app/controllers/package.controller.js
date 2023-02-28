@@ -40,22 +40,22 @@ const dbControllerInsertPackage = async (palletId, packageData) => {
 }
 
 
-const dbControllerGetPackageById = async (packageId, palletId) => {
-    const pool = await sql.connect(config);
-    try {
-        const request = pool.request();
-        let packages = await request
-            .input('packageId', sql.Int, packageId)
-            .input('palletId', sql.Int, palletId)
-            .execute('sp_GetSelectedPackageInfo');
-        return packages.recordset[0];
-    } catch (err) {
-        console.log(err)
-    }
-    finally {
-        pool.close();
-    }
-}
+// const dbControllerGetPackageById = async (packageId, palletId) => {
+//     const pool = await sql.connect(config);
+//     try {
+//         const request = pool.request();
+//         let packages = await request
+//             .input('packageId', sql.Int, packageId)
+//             .input('palletId', sql.Int, palletId)
+//             .execute('sp_GetSelectedPackageInfo');
+//         return packages.recordset[0];
+//     } catch (err) {
+//         console.log(err)
+//     }
+//     finally {
+//         pool.close();
+//     }
+// }
 
 const dbControllerUpdatePackage = async (packageId, package) => {
     const pool = await sql.connect(config);
@@ -138,7 +138,7 @@ const dbControllerGetSelectedHwbInfo = async (hwbNo, palletId) => {
 module.exports = {
     dbControllerGetPackageByPalletId,
     dbControllerInsertPackage,
-    dbControllerGetPackageById,
+    // dbControllerGetPackageById,
     dbControllerUpdatePackage,
     dbControllerDeletePackage,
     dbControllerGetSelectedPackagePkgNos,
