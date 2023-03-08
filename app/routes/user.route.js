@@ -1,7 +1,7 @@
 const userController = require('../controllers/user.controller');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const emailServ = require('../utils/email');
+const emailServ = require('../utils/emailService');
 
 module.exports = {
     registerUser: async (req, res) => {
@@ -80,15 +80,39 @@ module.exports = {
 
         try {
             const hashedPassword = await bcrypt.hash(password, 10);
-            userController.dbControllerUpdatePassword(email, hashedPassword)
-                .then(response => {
-                    const { companyName } = response;
-                    res.status(200).json({ status: 0, message: "Password changed successfully." });
-                    emailServ.sendEmail(email, password, companyName, "OAS Conatiner Manifest Password Reset")
-                })
-                .catch(err =>
+            try {
+                const { userId } = await userController.dbControllerUpdatePassword(email, hashedPassword);
+                if (userId > 0) {
+                    const companyDetails = await userController.dbControllerGetCompanyDetails(userId);
+
+                    const isEmailSent = await emailServ.sendEmailForPassword(email, password, companyDetails, "OAS Conatiner Manifest Password Reset");
+
+                    if(isEmailSent) {
+                        res.status(200).json({ status: 0, message: "Password changed successfully." })
+                    } else {
+                        res.status(500).json({ status: -1, message: 'Unable to process request.' })
+                    }
+
+                } else {
                     res.status(500).json({ status: -1, message: 'Unable to process request.' })
-                );
+                }
+
+            } catch (err) {
+                res.status(500).json({ status: -1, message: 'Unable to process request.' });
+            }
+            //    
+            // )
+            // .then(response => {
+            //     emailServ.sendEmailForPassword(email,
+            //         password,
+            //         response, "OAS Conatiner Manifest Password Reset")
+            //         .then(_ =>
+            //             res.status(200).json({ status: 0, message: "Password changed successfully." })
+            //         ).catch(_ =>
+            //             res.status(500).json({ status: -1, message: 'Unable to process request.' })
+            //         )
+            // })
+            // .;
 
         } catch (err) {
             res.status(500).json({ status: -1, message: 'Unable to process request.' });

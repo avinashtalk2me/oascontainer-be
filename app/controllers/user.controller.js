@@ -108,11 +108,11 @@ const dbControllerUpdatePassword = async (email, password) => {
         const updateUserPassword = await request
             .input('email', sql.NVarChar(sql.MAX), email)
             .input('password', sql.NVarChar(sql.MAX), password)
-            .output('companyName', sql.NVarChar(sql.MAX))
+            .output('userId', sql.Int)
             .execute('sp_UpdatePassword');
         return updateUserPassword.output;
     } catch (err) {
-        return { companyName: null }
+        return { userId: -1 }
     } finally {
         pool.close();
     }
@@ -135,6 +135,22 @@ const dbControllerDeleteUser = async (userId) => {
     }
 }
 
+const dbControllerGetCompanyDetails = async (userId) => {
+    const pool = await sql.connect(config);
+    try {
+        const request = pool.request();
+        let companyDetails = await request
+            .input('userId', sql.Int, userId)
+            .execute('sp_GetCompanyDetails');
+        return companyDetails.recordset[0];
+    } catch (err) {
+        console.log(err)
+    }
+    finally {
+        pool.close();
+    }
+}
+
 module.exports = {
     dbControllerCheckDuplicateEmail,
     dbControllerRegisterUser,
@@ -142,5 +158,6 @@ module.exports = {
     dbControllerIsValidCompany,
     dbControllerGetPasswordForEmail,
     dbControllerUpdatePassword,
-    dbControllerDeleteUser
+    dbControllerDeleteUser,
+    dbControllerGetCompanyDetails
 }

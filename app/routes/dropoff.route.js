@@ -25,8 +25,9 @@ module.exports = {
   updateDropOff: (req, res) => {
     const packageId = req.params.packageId;
     const data = { ...req.body };
+    const { userId } = req.user;
     packageController
-      .dbControllerUpdateDropoff(packageId, data)
+      .dbControllerUpdateDropoff(packageId, userId, data)
       .then((result) => res.status(200).json({ status: 0, data: result }))
       .catch((err) => res.status(500).json({ status: -1, message: "Unable to process request." })
       );
@@ -40,21 +41,24 @@ module.exports = {
       .catch(err => res.status(500).json({ status: -1, message: 'Unable to process request.' }));
   },
 
-  // getSelectedPackagePkgNos: (req, res) => {
-  //   const palletId = req.params.palletId
-  //   const { hwbNo, pkgNo } = { ...req.body };
-  //   packageController.dbControllerGetSelectedPackagePkgNos(palletId, hwbNo, pkgNo)
-  //     .then(result => res.status(200).json({ status: 0, data: result }))
-  //     .catch(err => res.status(500).json({ status: -1, message: 'Unable to process request.' }));
-  // },
-
   getSelectedHwbInfoForDropOff: (req, res) => {
     const { hwbNo, locationId } = req.params;
+    const { userId } = req.user;
     packageController
-      .dbControllerGetSelectedHwbInfoForDropoff(hwbNo, locationId)
+      .dbControllerGetSelectedHwbInfoForDropoff(hwbNo, locationId, userId)
       .then((result) => res.status(200).json({ status: 0, data: result }))
       .catch((err) =>
         res.status(500).json({ status: -1, message: err })
       );
   },
+
+  getSelectedPackagePkgNosForDropOff: (req, res) => {
+    const palletId = req.params.locationId
+    const { hwbNo, pkgNo } = { ...req.body };
+    const { userId } = req.user;
+    packageController.dbControllerGetSelectedPackagePkgNosForDropOff(palletId, hwbNo, pkgNo, userId)
+      .then(result => res.status(200).json({ status: 0, data: result }))
+      .catch(err => res.status(500).json({ status: -1, message: 'Unable to process request.' }));
+  },
+
 };

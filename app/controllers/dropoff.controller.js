@@ -41,12 +41,13 @@ const dbControllerInsertDropoff = async (locationId, deliveryId, userId, package
 }
 
 
-const dbControllerUpdateDropoff = async (packageId, package) => {
+const dbControllerUpdateDropoff = async (packageId, userId, package) => {
     const pool = await sql.connect(config);
     try {
         const request = pool.request();
         let updateDropoff = await request
             .input('packageId', sql.Int, packageId)
+            .input('userId', sql.Int, userId)
             .input('packageData', sql.NVarChar(sql.MAX), JSON.stringify(package))
             .output('rowcount', sql.Int)
             .execute('sp_UpdateDropoffPackageInfo');
@@ -77,36 +78,38 @@ const dbControllerDeleteDropoff = async (packageId, userId) => {
     }
 }
 
-// const dbControllerGetSelectedPackagePkgNos = async (palletId, hwbNo, pkgNo) => {
-//     const pool = await sql.connect(config);
-//     try {
-//         const request = pool.request();
-//         let getSelectedPkgNo = await request
-//             .input('palletId', sql.Int, palletId)
-//             .input('hwbNo', sql.NVarChar(50), hwbNo)
-//             .input('pkgNo', sql.NVarChar(10), pkgNo)
-//             .output('isValidPackage', sql.Bit)
-//             .execute('sp_GetSelectedPackagePkgNos');
-//         return getSelectedPkgNo.output;
-//     } catch (err) {
-//         console.log(err)
-//     }
-//     finally {
-//         pool.close();
-//     }
-// }
-
-const dbControllerGetSelectedHwbInfoForDropoff = async (hwbNo, locationId) => {
+const dbControllerGetSelectedHwbInfoForDropoff = async (hwbNo, locationId, userId) => {
     const pool = await sql.connect(config);
     try {
         const request = pool.request();
         let dropoffs = await request
             .input('hwbNo', sql.NVarChar(50), hwbNo)
+            .input('userId', sql.Int, userId)
             .input('locationId', sql.Int, locationId)
             .output('isHWBNoAvailable', sql.Bit)
             .execute('sp_GetSelectedHWBDetailsForDropOff');
 
         return { isValidHwb: dropoffs.output.isHWBNoAvailable, hwbInfo: dropoffs.recordset && { ...dropoffs.recordset[0] } };
+    } catch (err) {
+        console.log(err)
+    }
+    finally {
+        pool.close();
+    }
+}
+
+const dbControllerGetSelectedPackagePkgNosForDropOff = async (locationId, hwbNo, pkgNo, userId) => {
+    const pool = await sql.connect(config);
+    try {
+        const request = pool.request();
+        let getSelectedPkgNo = await request
+            .input('locationId', sql.Int, locationId)
+            .input('hwbNo', sql.NVarChar(50), hwbNo)
+            .input('userId', sql.Int, userId)
+            .input('pkgNo', sql.NVarChar(10), pkgNo)
+            .output('isValidPackage', sql.VarChar(10))
+            .execute('sp_GetSelectedPackagePkgNosForDropOff');
+        return getSelectedPkgNo.output;
     } catch (err) {
         console.log(err)
     }
@@ -123,4 +126,5 @@ module.exports = {
     dbControllerUpdateDropoff,
     dbControllerDeleteDropoff,
     dbControllerGetSelectedHwbInfoForDropoff,
+    dbControllerGetSelectedPackagePkgNosForDropOff
 }

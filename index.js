@@ -74,10 +74,10 @@ router.route("/location/:deliveryId").post(locationRoutes.insertLocation);
 router.route("/location/:deliveryId/:locationId").get(locationRoutes.getLocationById);
 router.route("/location/:locationId").patch(locationRoutes.updateLocation);
 router.route("/location/:locationId").delete(locationRoutes.deleteLocation);
-
+router.route("/email/location/:locationId").get(locationRoutes.getShipperDetailsForEmailForLocation);
 
 router.route("/dropOff/getSelectedHWBInfoForDropOff/:locationId/:hwbNo").get(dropOffRoutes.getSelectedHwbInfoForDropOff);
-// router.route("/dropOff/getPkgNo/:palletId").post(packageRoutes.getSelectedPackagePkgNos);
+router.route("/dropOff/getSelectedPackagePkgNosForDropOff/:locationId").post(dropOffRoutes.getSelectedPackagePkgNosForDropOff);
 router.route("/dropOff/:locationId").get(dropOffRoutes.getDropOffs);
 router.route("/dropOff/:locationId/:deliveryId").post(dropOffRoutes.insertDropOff);
 router.route("/dropOff/:packageId").patch(dropOffRoutes.updateDropOff);

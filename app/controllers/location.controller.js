@@ -94,10 +94,48 @@ const dbControllerDeleteLocation = async (locationId, userId) => {
     }
 }
 
+const dbControllerGetShipperDetailsForEmailForSelectedLocation = async (locationId, userId) => {
+    const pool = await sql.connect(config);
+    try {
+        const request = pool.request();
+        let response = await request
+            .input('locationId', sql.Int, locationId)
+            .input('userId', sql.Int, userId)
+            .execute('sp_GetShipperDetailsForEmail');
+        return response.recordset;
+    } catch (err) {
+        console.log(err)
+    }
+    finally {
+        pool.close();
+    }
+}
+
+const dbControllerUpdateLocationDropStatusAfterEmailSent = async (locationId, packageData) => {
+    const pool = await sql.connect(config);
+    try {
+        const request = pool.request();
+        let response = await request
+            .input('locationId', sql.Int, locationId)
+            .input('packageData', sql.Int, packageData)
+            .input('allSuccess', sql.Bit, packageData.every(item => !item.failure))
+            .output('rowCount', sql.Int)
+            .execute('sp_GetShipperDetailsForEmail');
+        return response.output;
+    } catch (err) {
+        return {rowCount : -1}
+    }
+    finally {
+        pool.close();
+    }
+}
+
 module.exports = {
     dbControllerGetLocation,
     dbControllerInsertLocation,
     dbControllerGetLocationById,
     dbControllerUpdateLocation,
-    dbControllerDeleteLocation
+    dbControllerDeleteLocation,
+    dbControllerGetShipperDetailsForEmailForSelectedLocation,
+    dbControllerUpdateLocationDropStatusAfterEmailSent
 }
