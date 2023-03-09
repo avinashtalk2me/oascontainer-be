@@ -50,7 +50,7 @@ const sendMail = async (company, email, subject, html) => {
         let mailOptions = {
             from: company.EmailUser, // sender addresss
             to: `${email}`, // list of receivers
-            cc: company.EmailReceipent,
+            // cc: company.EmailReceipent,
             subject, // Subject line
             // text: "Hello. This email is for your email verification.",
             html
