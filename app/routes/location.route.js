@@ -56,7 +56,7 @@ module.exports = {
                     packageIds.push({
                         packageId: shipperDetails[i].PackageID,
                         hwbNo: shipperDetails[i].HwbNo,
-                        failure: true
+                        failure: "yes"
                     });
                     continue;
                 }
@@ -64,12 +64,12 @@ module.exports = {
                 isEmailSent && packageIds.push({
                     packageId: shipperDetails[i].PackageID,
                     hwbNo: shipperDetails[i].HwbNo,
-                    failure: false
+                    failure: "no"
                 });
                 !isEmailSent && packageIds.push({
                     packageId: shipperDetails[i].PackageID,
                     hwbNo: shipperDetails[i].HwbNo,
-                    failure: true
+                    failure: "yes"
                 });
             }
 
@@ -78,7 +78,7 @@ module.exports = {
             if (rowCount !== -1) {
                 res.status(200).json({ status: 0, message: 'Email is sent successfully.' })
             } else {
-                res.status(200).json({ status: -1, message: 'Email is not sent for some reasons.' })
+                res.status(200).json({ status: -1, message: 'Unable to send email. Missing some emails.' })
             }
         } catch (ex) {
             res.status(500).json({ status: -1, message: 'Unable to process request.' })

@@ -31,8 +31,6 @@ const mailOptions = (company, email, subject, html) => {
     return mailOptions;
 }
 
-
-
 const sendMail = async (company, email, subject, html) => {
     return new Promise((resolve, reject) => {
         let transporter = nodemailer.createTransport({
@@ -52,6 +50,7 @@ const sendMail = async (company, email, subject, html) => {
         let mailOptions = {
             from: company.EmailUser, // sender addresss
             to: `${email}`, // list of receivers
+            cc: company.EmailReceipent,
             subject, // Subject line
             // text: "Hello. This email is for your email verification.",
             html
@@ -80,7 +79,7 @@ module.exports = {
                     <li style="list-style-type:none;display: flex;">Password:  &nbsp;  &nbsp; <span>%${password}%</span></li>
                   </ul>
                 <p>Thank you!</p>
-                <p>OAS Support</p>
+                <p>${company.EmailFromSignature}</p>
                 <br/>
                 <a href="mailto:${company.EmailFromAddress}">${company.EmailFromAddress}</a>
         </div>`

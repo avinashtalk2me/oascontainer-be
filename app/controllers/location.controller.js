@@ -117,10 +117,10 @@ const dbControllerUpdateLocationDropStatusAfterEmailSent = async (locationId, pa
         const request = pool.request();
         let response = await request
             .input('locationId', sql.Int, locationId)
-            .input('packageData', sql.Int, packageData)
-            .input('allSuccess', sql.Bit, packageData.every(item => !item.failure))
+            .input('packageData', sql.NVarChar(sql.MAX), JSON.stringify(packageData))
+            .input('allSuccess', sql.VarChar(10), packageData.every(item => item.failure === "no") === false ? 'no' : 'yes')
             .output('rowCount', sql.Int)
-            .execute('sp_GetShipperDetailsForEmail');
+            .execute('sp_UpdateLocationDropStatusAfterEmailSent');
         return response.output;
     } catch (err) {
         return {rowCount : -1}
