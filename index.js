@@ -36,7 +36,16 @@ router.route("/updatePassword").patch(userRoutes.updatePasword);
 router.route("/getAppVersion").get(appUtilsRoutes.getAppVersion);
 
 router.use(auth);
-router.route("/deleteUser/:userId").delete(userRoutes.deleteUser);
+router.route("/getCompanyDetails").get(userRoutes.getCompanyDetails);
+router.route("/updateCompanyDetails").patch(userRoutes.updateCompanyDetails);
+router.route("/changePasswordForNewLogin").patch(userRoutes.changePasswordForNewLogin);
+router.route("/deactivateUser").delete(userRoutes.deactivateUser);
+router.route("/user/getUsers").get(userRoutes.getUsers);
+router.route("/user/getUserByUserId/:userId").get(userRoutes.getUserByUserId);
+router.route("/user/addUser").post(userRoutes.addUser);
+router.route("/user/updateUser/:userId").patch(userRoutes.updateUser);
+router.route("/user/deleteUserByUserId/:userId").delete(userRoutes.deleteUserByUserId);
+
 router.route("/sailing").get(containerRoutes.getContainers);
 router.route("/sailing").post(containerRoutes.insertContainer);
 router.route("/sailing/containermanifest/:sailId").get(containerRoutes.getContainerManifest);

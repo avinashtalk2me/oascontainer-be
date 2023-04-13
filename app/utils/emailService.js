@@ -90,14 +90,18 @@ module.exports = {
 
     sendEmailForShipmentScanned: async (item, company) => {
         const html = `<div>
-                        <p> Shipment number <b>${item.HwbNo}</b> delivered.</p>
-                        <p> Total Packages Delivered: <b>${item.PackageCount}</b> </p>
-                        <p> Date: <b>${item.DeliveryDate}</b> </p>
-                        <p> Time: <b>${item.DisplayTime}</b> </p>                            
-                        <div> Thank you for your business. Please contact <b>${company.Name}</b> with any questions or concerns.<div>
+                        <p> Embarque número <b>${item.HwbNo}</b> fue entregado.</p>
+                        <p> Total de paquetes entregados: <b>${item.PackageCount}</b> </p>
+                        <p> Fecha: <b>${item.DeliveryDate}</b> </p>
+                        <p> Hora: <b>${item.DisplayTime}</b> </p>                            
+                        <div> Gracias por hacer negocios. Comuníquese con <b>${item.CompanyForwarder}</b> si tiene alguna pregunta o inquietud.<div>
+                        <br/>
+                        <br/>
+                        *No responda*
+                        
                   </div>`
 
-        let resp = await sendMail(company, item.ShipperEmail, `Shipment number ${item.HwbNo} has been delivered`, html)
+        let resp = await sendMail(company, item.ShipperEmail, `Embarque número ${item.HwbNo} fue entregado`, html)
         return resp;
 
     }
