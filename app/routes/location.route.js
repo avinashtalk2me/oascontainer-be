@@ -78,7 +78,7 @@ module.exports = {
             if (rowCount !== -1) {
                 res.status(200).json({ status: 0, message: 'Email is sent successfully.' })
             } else {
-                res.status(200).json({ status: -1, message: 'Unable to send email. Missing some emails.' })
+                res.status(200).json({ status: -1, message: 'Unable to send email. Missing Email Recipient.' })
             }
         } catch (ex) {
             res.status(500).json({ status: -1, message: 'Unable to process request.' })
