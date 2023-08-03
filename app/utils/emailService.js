@@ -91,16 +91,15 @@ module.exports = {
     sendEmailForShipmentScanned: async (item, company) => {
         const html = `<div>
                         <p>Confirmacion de Entrega</p>
-                        <p> Embarque <b>${item.ShipperName}</b>, su embarque número <b>${item.HwbNo}</b>. a <b>${item.DestinationCountry || ''}</b>, fue entregado hoy.</p>
+                        <p> Embarque <b>${item.ShipperName}</b>, su embarque número <b>${item.HwbNo}</b>. a <b>${item.DestinationCountry.trim()}</b>, fue entregado hoy.</p>
                         <p> Numero de paquetes: <b>${item.PackageCount}</b></p>
                         <p> Fecha de entrega: <b>${item.DeliveryDate}</b></p>
                         <p> Hora: <b>${item.DisplayTime}</b></p>                            
-                        <div>Gracias por su patrocinio. Cualquier pregunta o inquietud comuniquese directamente con nosotros al <b>${company.CompanyForwarder}</b><div>
+                        <div>Gracias por su patrocinio. Cualquier pregunta o inquietud comuniquese directamente con nosotros al <b>${company.Phone}</b><div>
                         <br/>
                         <p>POR FAVOR NO RESPONDA A ESTE NOTIFICACION.</p>
-                        <br/>s
-                        <p><b>${company.Phone || ''}</b></p>
                         <br/>
+                        <p><b>${company.Name}</b></p>
                         <br/>
                         *No responda*                        
                   </div>`
