@@ -27,6 +27,7 @@ const dbControllerInsertLocation = async (deliveryId, location) => {
             .input('locationDesc', sql.NVarChar(40), location.locationDesc)
             .input('locationTime', sql.DateTime, location.locationTime)
             .input('displayLocationTime', sql.Text, location.displayLocationTime)
+            .input('destinationCountry', sql.Text, location.destinationCountry)
             .input('deliveryId', sql.Int, deliveryId)
             .output('locationId', sql.Int)
             .execute('sp_InsertLocationInfo');
@@ -63,6 +64,7 @@ const dbControllerUpdateLocation = async (locationId, location) => {
         let response = await request
             .input('locationDesc', sql.NVarChar(40), location.locationDesc)
             .input('locationTime', sql.DateTime, location.locationTime)
+            .input('destinationCountry', sql.Text, location.destinationCountry)
             .input('displayLocationTime', sql.Text, location.displayLocationTime)
             .input('locationId', sql.Int, locationId)
             .output('RowCount', sql.Int)

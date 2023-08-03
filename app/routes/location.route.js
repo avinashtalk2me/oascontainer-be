@@ -60,17 +60,18 @@ module.exports = {
                     });
                     continue;
                 }
-                const isEmailSent = await emailServ.sendEmailForShipmentScanned(shipperDetails[i], companyDetails);
-                isEmailSent && packageIds.push({
+                // const isEmailSent = 
+                await emailServ.sendEmailForShipmentScanned(shipperDetails[i], companyDetails);
+                packageIds.push({
                     packageId: shipperDetails[i].PackageID,
                     hwbNo: shipperDetails[i].HwbNo,
                     failure: "no"
                 });
-                !isEmailSent && packageIds.push({
-                    packageId: shipperDetails[i].PackageID,
-                    hwbNo: shipperDetails[i].HwbNo,
-                    failure: "yes"
-                });
+                // !isEmailSent && packageIds.push({
+                //     packageId: shipperDetails[i].PackageID,
+                //     hwbNo: shipperDetails[i].HwbNo,
+                //     failure: "yes"
+                // });
             }
 
             const { rowCount } = await locationController.dbControllerUpdateLocationDropStatusAfterEmailSent(locationId, packageIds);
