@@ -50,6 +50,7 @@ router.route("/sailing").get(containerRoutes.getContainers);
 router.route("/sailing").post(containerRoutes.insertContainer);
 router.route("/sailing/containermanifest/:sailId").get(containerRoutes.getContainerManifest);
 router.route("/sailing/palletmanifest/:sailId").get(containerRoutes.getPalletManifest);
+router.route("/sailing/hwbmanifest/:sailId").get(containerRoutes.getHWBManifest);
 router.route("/sailing/:sailId").get(containerRoutes.getContainerById);
 router.route("/sailing/:sailId").patch(containerRoutes.updateContainer);
 router.route("/sailing/:sailId").delete(containerRoutes.deleteContainer);

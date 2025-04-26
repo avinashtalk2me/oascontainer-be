@@ -127,6 +127,22 @@ const dbControllerDeleteContainer = async (id, userId) => {
     }
 }
 
+const dbControllerHWBManifest = async (sailId) => {
+    const pool = await sql.connect(config);
+    try {
+        const request = pool.request();
+        let container = await request
+            .input('sailId', sql.Int, sailId)
+            .execute('sp_GetHWBManifest');
+        return container.recordset;
+    } catch (err) {
+        console.log(err)
+    }
+    finally {
+        pool.close();
+    }
+}
+
 
 module.exports = {
     dbControllerGetContainer,
@@ -135,5 +151,6 @@ module.exports = {
     dbControllerUpdateContainer,
     dbControllerGetContainerManifest,
     dbControllerPalletManifest,
-    dbControllerDeleteContainer
+    dbControllerDeleteContainer,
+    dbControllerHWBManifest
 }

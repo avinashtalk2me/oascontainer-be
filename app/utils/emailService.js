@@ -95,7 +95,7 @@ module.exports = {
                         <p> Numero de paquetes: <b>${item.PackageCount}</b></p>
                         <p> Fecha de entrega: <b>${item.DeliveryDate}</b></p>
                         <p> Hora: <b>${item.DisplayTime}</b></p>                            
-                        <div>Gracias por su patrocinio. Cualquier pregunta o inquietud comuniquese directamente con nosotros al <b>${company.Phone}</b><div>
+                        <div>Gracias por su patrocinio. Cualquier pregunta o inquietud comuniquese directamente con nosotros al <b>${company.Phone.replace("-",".")}</b><div>
                         <br/>
                         <p>POR FAVOR NO RESPONDA A ESTE NOTIFICACION.</p>
                         <br/>
